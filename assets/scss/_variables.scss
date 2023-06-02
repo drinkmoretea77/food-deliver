@@ -1,0 +1,83 @@
+$color-bg: #ffffff;
+$color-bg-secondary: #f3f6fb;
+$color-border: #e2e8f0;
+$color-text: #404040;
+$color-text-light: #ffffff;
+$color-text-dark: #000000;
+$color-accent: #5a30f0;
+$color-text-secondary: #636c81;
+$color-overlay: rgba(0, 0, 0, 0.2);
+
+$box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.07);
+$header-height: 70px;
+
+$transition: 0.3s cubic-bezier(0.1, 0.7, 0.6, 0.9);
+$transition-overlay: opacity 0.3s cubic-bezier(0.1, 0.7, 0.6, 0.9), visibility 0s linear 0.3s;
+
+$header_breakpoint: 1366px;
+$laptop: 1023px;
+$tablet: 767px;
+$mobile: 479px;
+
+
+@mixin responsive($max-width) {
+  @media (max-width: $max-width) {
+    @content;
+  }
+}
+
+@mixin center_horizontal() {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+@mixin flex_center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin button() {
+  padding: 8px 12px;
+  border-radius: 34px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.1;
+  color: $color-text-light;
+  background: $color-accent;
+  border: 1px solid $color-accent;
+  cursor: pointer;
+  transition: $transition;
+}
+
+@mixin button_secondary() {
+  padding: 8px 12px;
+  border-radius: 34px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.1;
+  color: $color-text-secondary;
+  background: $color-bg;
+  border: 1px solid $color-bg;
+  cursor: pointer;
+}
+
+@mixin icon_phone() {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABIElEQVR4nO3VwSoFURwH4A+h2FAUz3ElS0l5CgsWNrJjKxs2XoDuAygegFhZiMJKdq4dC5KUhY2uTo263c4dZM50F/dXv83M1NfMnPM/dNIGWcQdrjBaFrqFekOrZaBzTWjoJyqp4ZMIHHqGrpTwWws4dD4l/JIDP2AwFXyRA4dOpoLXctBb9KaCx/HeAp6ROBsRNAyS5BnEfRP8hOEy8Al8NOGn6C8DX4l88r3Ug+Q7uxF8WwnpwUEE38nuNSZstSkMFIX34TCCH2Eoe2YaN9n1Ryyhu6iVfhzBn3Gdc7BUinrz/R9GauxIrWLkv3hP9n/rf+ylgrIc2ed5rSl4yNR+CS8oOGHRreccLKGbEmYMqzjP5vprtt1mU6KdtG++AA/oqGgeE678AAAAAElFTkSuQmCC');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 24px;
+    height: 24px;
+}
+
+@mixin fade-animation {
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
