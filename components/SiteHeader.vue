@@ -7,7 +7,9 @@
       :class="{ 'site-header--index': isHomePage }"
     >
       <div class="site-header__logo-delivery">
-        <a href="/" class="site-header__logo logo">FoodDeliver</a>
+        <nuxt-link to="/" class="site-header__logo logo">
+          FoodDeliver
+        </nuxt-link>
         <DeliveryToggle class="site-header__delivery-toggle" />
       </div>
       <MainNav class="site-header__main-nav" />
@@ -33,7 +35,9 @@
             @touchmove="handleTouchMove"
             @touchcancel="closeBurgerMenu"
           >
-            <a href="/" class="logo">FoodDeliver</a>
+            <nuxt-link to="/" class="logo">
+              FoodDeliver
+            </nuxt-link>
             <div class="burger-menu__toggle">
               <DeliveryToggle class="site-header__delivery-toggle" />
             </div>
@@ -50,7 +54,9 @@
           </div>
         </transition>
       </div>
-      <a href="/" class="site-header-m__item logo">FoodDeliver</a>
+      <nuxt-link to="/" class="site-header-m__item logo">
+        FoodDeliver
+      </nuxt-link>
       <ContactInfo class="site-header-m__item contact-info-m" />
     </header>
   </transition>
